@@ -1,0 +1,11 @@
+.post {
+    width: 80%;
+    text-align:center;
+    margin:10px auto;
+    border:2px solid #333;
+    font-size:50%;
+    color:black;
+}
+.post:hover {
+    background-color:#909090;
+}

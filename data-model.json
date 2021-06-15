@@ -1,0 +1,18 @@
+
+{
+    "posts": [
+      {
+        "path": "/post3",
+        "title": "My first post",
+        "content": "Content"
+      },
+      {
+        "path":"/post4",
+        "title": "My second post",
+        "content": "Content"
+      }
+    ]
+  }
+  
+
+
