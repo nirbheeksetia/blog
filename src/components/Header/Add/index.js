@@ -8,13 +8,8 @@ class addToDatabase extends Component{
         this.state = {
             increment:0
         };
-        this.createpath = this.createpath.bind(this);
         this.add = this.add.bind(this);
     }
-    createpath(){
-        let counter = this.state.increment.value;
-        return('/post' + toString(counter));
-    };
     file = async (e) => {
         e.preventDefault()
         const reader = new FileReader()
@@ -30,8 +25,9 @@ class addToDatabase extends Component{
         document.getElementById("contentfile").innerText = text;
         const dbref = firebase.database().ref('posts');
         let posttitle = document.getElementById("textinput").value;
+        let postpath = '/post' + this.state.increment.toString();
         const post = {
-          path: this.createpath(),
+          path: postpath,
           title:posttitle,
           content:text
         }

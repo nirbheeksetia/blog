@@ -7,11 +7,6 @@ import firebase from '../../firebase';
 class Home extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            mypath:null,
-            mytitle:null,
-            posts:null
-        };
         this.retrieve = this.retrieve.bind(this);
     }
     retrieve(){
@@ -20,12 +15,7 @@ class Home extends Component{
             let post = snap.val();
             let mypostPath = post.path;
             let mypostTitle = post.title;
-            this.setState({
-                posts:{mypath:mypostPath,
-                    mytitle:mypostTitle,
-                    component:<Post path={this.state.mypath} title={this.state.mytitle}/>}
-            });
-            document.getElementById("maindiv").appendChild(this.state.posts.component);
+            document.getElementById("maindiv").appendChild(<Post path={mypostPath} title={mypostTitle}/>)
         });
     };
     render(){
